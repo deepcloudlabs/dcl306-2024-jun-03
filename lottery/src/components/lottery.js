@@ -8,6 +8,12 @@ class Lottery extends React.PureComponent {
             numbers: [],
             column: 3
         }
+
+    }
+
+    componentDidMount() {
+        console.log("Component is up and running and waiting for your events!");
+        this.draw()
     }
 
     generateRandomNumber = (min, max) => {
@@ -40,7 +46,7 @@ class Lottery extends React.PureComponent {
     draw = (event) => {
         let newNumbers = [...this.state.numbers];
         this.generateLotteryNumbers(this.state.column).forEach(row => newNumbers.push(row));
-        this.setState({numbers: newNumbers},()=>{
+        this.setState({numbers: newNumbers}, () => {
             console.log(newNumbers)
         });
     }
@@ -56,33 +62,33 @@ class Lottery extends React.PureComponent {
         let numbersTable = "";
         if (this.state.numbers.length > 0) {
             numbersTable = (
-                <table className="table table-active table-hover table-striped">
-                <thead>
-                <tr>
-                    <th>Row Number</th>
-                    <th>Number #1</th>
-                    <th>Number #2</th>
-                    <th>Number #3</th>
-                    <th>Number #4</th>
-                    <th>Number #5</th>
-                    <th>Number #6</th>
-                </tr>
-                </thead>
-                <tbody>
-                {
-                    this.state.numbers.map((row, index) => (
-                        <tr key={index}>
-                            <td>{index + 1}</td>
-                            {
-                                row.map(
-                                    number => <td key={number}>{number}</td>
-                                )
-                            }
-                        </tr>
-                    ))
-                }
-                </tbody>
-            </table>);
+                <table className="table table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th>Row Number</th>
+                        <th>Number #1</th>
+                        <th>Number #2</th>
+                        <th>Number #3</th>
+                        <th>Number #4</th>
+                        <th>Number #5</th>
+                        <th>Number #6</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {
+                        this.state.numbers.map((row, index) => (
+                            <tr key={index}>
+                                <td>{index + 1}</td>
+                                {
+                                    row.map(
+                                        number => <td key={number}>{number}</td>
+                                    )
+                                }
+                            </tr>
+                        ))
+                    }
+                    </tbody>
+                </table>);
         }
         return (
             <div className="card">
