@@ -33,6 +33,10 @@ class Lottery extends React.PureComponent {
         return numbers;
     }
 
+    reset = (event) => {
+        this.setState({numbers: [], column: this.state.column + 1})
+    }
+
     draw = (event) => {
         let newNumbers = [...this.state.numbers];
         this.generateLotteryNumbers(this.state.column).forEach(row => newNumbers.push(row));
@@ -49,7 +53,37 @@ class Lottery extends React.PureComponent {
         }); // async
     }
     render = () => {
-        
+        let numbersTable = "";
+        if (this.state.numbers.length > 0) {
+            numbersTable = (
+                <table className="table table-active table-hover table-striped">
+                <thead>
+                <tr>
+                    <th>Row Number</th>
+                    <th>Number #1</th>
+                    <th>Number #2</th>
+                    <th>Number #3</th>
+                    <th>Number #4</th>
+                    <th>Number #5</th>
+                    <th>Number #6</th>
+                </tr>
+                </thead>
+                <tbody>
+                {
+                    this.state.numbers.map((row, index) => (
+                        <tr key={index}>
+                            <td>{index + 1}</td>
+                            {
+                                row.map(
+                                    number => <td key={number}>{number}</td>
+                                )
+                            }
+                        </tr>
+                    ))
+                }
+                </tbody>
+            </table>);
+        }
         return (
             <div className="card">
                 <div className="card-header">
@@ -65,29 +99,9 @@ class Lottery extends React.PureComponent {
                                onChange={this.handleChange}
                                value={this.state.column}/>
                         <button className="btn btn-primary" onClick={this.draw}>Draw</button>
+                        <button className="btn btn-warning" onClick={this.reset}>Reset</button>
                     </div>
-                    <table className="table table-active table-hover table-striped">
-                        <thead>
-                            <tr>
-                                <th>Row Number</th>
-                                <th>Number #1</th>
-                                <th>Number #2</th>
-                                <th>Number #3</th>
-                                <th>Number #4</th>
-                                <th>Number #5</th>
-                                <th>Number #6</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        {
-                            this.state.numbers.map( row => (
-                                <tr>
-
-                                </tr>
-                            ))
-                        }
-                        </tbody>
-                    </table>
+                    {numbersTable}
                 </div>
             </div>)
     }
