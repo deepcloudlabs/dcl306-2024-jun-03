@@ -1,15 +1,15 @@
 import React from "react";
 
-export default function TableBody({children,values,attributes,key}) {
+export default function TableBody({children,values,attributes,keyAttribute}) {
     return (
         <tbody>
         {
             values.map((value, index) => (
-                <tr key={index}>
+                <tr key={value[keyAttribute]}>
                     <td>{index + 1}</td>
                     {
                         attributes.split(",").map(
-                            attribute => <td key={value[key]}>{value[attribute]}</td>
+                            (attribute,index) => <td key={index}>{value[attribute]}</td>
                         )
                     }
                 </tr>

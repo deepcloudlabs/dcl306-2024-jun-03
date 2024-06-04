@@ -64,7 +64,7 @@ export default function Mastermind() {
                     <p></p>
                     <Table className="table table-info table-striped table-hover">
                         <TableHeader headerNames="Move No,Guess,Message,Perfect Match,Partial Match" />
-                        <TableBody values={moves} attributes="guess,message,perfectMatch,partialMatch" key="guess"></TableBody>
+                        <TableBody values={moves} attributes="guess,message,perfectMatch,partialMatch" keyAttribute="guess"></TableBody>
                     </Table>
                 </CardBody>
             </Card>
