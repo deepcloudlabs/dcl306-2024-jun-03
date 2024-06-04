@@ -11,3 +11,38 @@ export function createSecret(level=3){
     }
     return digits.reduce((number,digit) => 10 * number + digit, 0);
 }
+
+export class Move {
+    constructor(guess,perfectMatch,partialMatch) {
+        this.guess = guess;
+        this.perfectMatch = perfectMatch;
+        this.partialMatch = partialMatch;
+        this.message = "";
+        if (perfectMatch > 0)
+            this.message = `+${perfectMatch}`;
+        if (partialMatch > 0)
+            this.message = `${this.message}-${partialMatch}`;
+        if (this.message.length === 0)
+            this.message = "No Match";
+    }
+}
+
+export function evaluateMove(secret,guess){
+    let perfectMatch = 0;
+    let partialMatch = 0;
+    let secretAsString = secret.toString();
+    let guessAsString = guess.toString();
+    for (let i=0; i<secretAsString.length; i++){
+        let s = secretAsString.charAt(i);
+        for (let j=0; j<guessAsString.length; j++){
+            let g = guessAsString.charAt(j);
+            if (s === g){
+                if (i===j)
+                    perfectMatch++;
+                else
+                    partialMatch++;
+            }
+        }
+    }
+    return new Move(guess,perfectMatch,partialMatch);
+}

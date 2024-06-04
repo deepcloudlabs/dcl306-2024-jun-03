@@ -1,12 +1,12 @@
 import React from "react";
 
 // this is a stateless component
-export default  function TableHeader(props) {
+export default  function TableHeader({headerNames}) {
     return (
         <thead>
         <tr>
             {
-                props.headerNames.split(",").map( headerName => (
+                headerNames.split(",").map( headerName => (
                     <th key={headerName}>{headerName}</th>
                 ))
             }
