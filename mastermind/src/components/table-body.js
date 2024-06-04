@@ -5,7 +5,7 @@ export default function TableBody({children,values,attributes,keyAttribute}) {
         <tbody>
         {
             values.map((value, index) => (
-                <tr key={value[keyAttribute]}>
+                <tr key={value[keyAttribute] + index.toString()}>
                     <td>{index + 1}</td>
                     {
                         attributes.split(",").map(
