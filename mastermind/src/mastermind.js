@@ -62,7 +62,7 @@ export default function Mastermind() {
                                 onClick={play}/>
                     </FormGroup>
                     <p></p>
-                    <Table className="table table-info table-striped table-hover">
+                    <Table className="table table-responsive table-striped table-hover">
                         <TableHeader headerNames="Move No,Guess,Message,Perfect Match,Partial Match" />
                         <TableBody values={moves} attributes="guess,message,perfectMatch,partialMatch" keyAttribute="guess"></TableBody>
                     </Table>
