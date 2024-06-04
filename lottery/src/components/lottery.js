@@ -1,5 +1,14 @@
 // stateful component -> js class
 import React from "react";
+import TableHeader from "./table-header";
+import Table from "./table";
+import TableBody from "./table-body";
+import Card from "./card";
+import CardHeader from "./card-header";
+import CardBody from "./card-body";
+import FormGroup from "./form-group";
+import Button from "./button";
+import InputText from "./input-text";
 
 class Lottery extends React.PureComponent {
     constructor(props, context) {
@@ -62,54 +71,27 @@ class Lottery extends React.PureComponent {
         let numbersTable = "";
         if (this.state.numbers.length > 0) {
             numbersTable = (
-                <table className="table table-hover table-striped">
-                    <thead>
-                    <tr>
-                        <th>Row Number</th>
-                        <th>Number #1</th>
-                        <th>Number #2</th>
-                        <th>Number #3</th>
-                        <th>Number #4</th>
-                        <th>Number #5</th>
-                        <th>Number #6</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {
-                        this.state.numbers.map((row, index) => (
-                            <tr key={index}>
-                                <td>{index + 1}</td>
-                                {
-                                    row.map(
-                                        number => <td key={number}>{number}</td>
-                                    )
-                                }
-                            </tr>
-                        ))
-                    }
-                    </tbody>
-                </table>);
+                <Table className="table table-hover table-striped">
+                    <TableHeader headerNames="Row Number,Number #1,Number #2,Number #3,Number #4,Number #5,Number #6"></TableHeader>
+                    <TableBody values={this.state.numbers} />
+                </Table>
+            );
         }
         return (
-            <div className="card">
-                <div className="card-header">
-                    <h4 className="card-title">Lottery</h4>
-                </div>
-                <div className="card-body">
-                    <div className="form-group">
-                        <label htmlFor="column" className="control-label">Column:</label>
-                        <input type="text"
-                               id="column"
-                               name="column"
-                               className="form-control"
-                               onChange={this.handleChange}
-                               value={this.state.column}/>
-                        <button className="btn btn-primary" onClick={this.draw}>Draw</button>
-                        <button className="btn btn-warning" onClick={this.reset}>Reset</button>
-                    </div>
+            <Card>
+                <CardHeader title="Lottery" />
+                <CardBody>
+                    <FormGroup>
+                        <InputText label="Column"
+                                   htmlFor="column"
+                                   value={this.state.column}
+                                   handleInput={this.handleChange}></InputText>
+                        <Button className="btn btn-primary" onClick={this.draw} label="Draw"></Button>
+                        <Button className="btn btn-warning" onClick={this.reset} label="Reset"></Button>
+                    </FormGroup>
                     {numbersTable}
-                </div>
-            </div>)
+                </CardBody>
+            </Card>)
     }
 
 }
