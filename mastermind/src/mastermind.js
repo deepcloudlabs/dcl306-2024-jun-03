@@ -2,7 +2,7 @@ import Container from "./components/container";
 import CardHeader from "./components/card-header";
 import Card from "./components/card";
 import CardBody from "./components/card-body";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {createSecret, evaluateMove} from "./utility";
 import FormGroup from "./components/form-group";
 import InputText from "./components/input-text";
@@ -11,6 +11,7 @@ import Table from "./components/table";
 import TableHeader from "./components/table-header";
 import TableBody from "./components/table-body";
 import Badge from "./components/badge";
+import ProgressBar from "./components/progress-bar";
 
 const initialSecret = createSecret(3);
 
@@ -21,7 +22,8 @@ export default function Mastermind() {
     let [secret, setSecret] = useState(initialSecret);
     let [guess, setGuess] = useState(123);
     let [numberOfMoves, setNumberOfMoves] = useState(0);
-    let maxNumberOfMoves = 10;
+    let [maxNumberOfMoves, setMaxNumberOfMoves] = useState(10);
+    let [duration, setDuration] = useState(60);
 
     const handleChange = (event) => {
         setGuess(Number(event.target.value));
@@ -42,6 +44,15 @@ export default function Mastermind() {
             setMoves([...moves, evaluateMove(secret,guess)]);
         }
     };
+    useEffect(() => {
+        let timer = setInterval(() =>{
+            setDuration(duration - 1)
+        }, 1_000);
+        return () => {
+            clearInterval(timer);
+        }
+    });
+
 
     return (
         <Container>
@@ -52,7 +63,9 @@ export default function Mastermind() {
                     <FormGroup>
                         <Badge label="Level" value={level} bgColor="bg-success"></Badge>
                         <Badge label="Number of moves" value={numberOfMoves} bgColor="bg-warning"></Badge>
+                        <Badge label="Moves left" value={maxNumberOfMoves-numberOfMoves} bgColor="bg-danger"></Badge>
                         <Badge label="Lives" value={lives} bgColor="bg-danger"></Badge>
+                        <ProgressBar value={duration} max="60"></ProgressBar>
                         <InputText label="Guess"
                                    value={guess}
                                    htmlFor="guess"
