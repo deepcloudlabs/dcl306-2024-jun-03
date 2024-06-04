@@ -22,7 +22,7 @@ export default function Mastermind() {
     let [secret, setSecret] = useState(initialSecret);
     let [guess, setGuess] = useState(123);
     let [numberOfMoves, setNumberOfMoves] = useState(0);
-    let [maxNumberOfMoves, setMaxNumberOfMoves] = useState(10);
+    let [maxNumberOfMoves, setMaxNumberOfMoves] = useState(10 + 2 * level - 3);
     let [duration, setDuration] = useState(60);
 
     const handleChange = (event) => {
@@ -32,30 +32,43 @@ export default function Mastermind() {
         setMaxNumberOfMoves(10 + 2 * level - 3);
         setDuration(60 + 10 * (level - 3));
         setNumberOfMoves(0);
-        setMoves([new Move(secret,0,0,message)]);
+        setMoves([new Move(secret, 0, 0, message)]);
         setSecret(createSecret(level));
     }
 
     const play = (event) => {
         if (guess === secret) {
+            if (level === 10) {
+                // end of game, player wins the game!
+                return;
+            }
             setLevel(level + 1);
-            setLives(lives+1);
+            setLives(lives + 1);
             setDuration(60)
             initializeGame("You win this level.");
             return;
         }
-        setNumberOfMoves(numberOfMoves+1);
-        if (numberOfMoves > maxNumberOfMoves){
-            setLives(lives-1);
+        let newNumberOfMoves = numberOfMoves + 1;
+        setNumberOfMoves(newNumberOfMoves);
+        if (newNumberOfMoves >= maxNumberOfMoves) {
+            if (lives === 1) {
+                // end of game, player loses the game!
+                return;
+            }
+            setLives(lives - 1);
             initializeGame("You lose this level.");
         } else {
-            setMoves([...moves, evaluateMove(secret,guess)]);
+            setMoves([...moves, evaluateMove(secret, guess)]);
         }
     };
     useEffect(() => {
-        let timer = setInterval(() =>{
-            if (duration <= 0){
-                setLives(lives-1);
+        let timer = setInterval(() => {
+            if (duration <= 0) {
+                if (lives === 1) {
+                    // end of game, player loses the game!
+                    return;
+                }
+                setLives(lives - 1);
                 initializeGame("You lose this level.");
                 return;
             }
@@ -77,7 +90,8 @@ export default function Mastermind() {
                     <FormGroup>
                         <Badge label="Level" value={level} bgColor="bg-success"></Badge>
                         <Badge label="Number of moves" value={numberOfMoves} bgColor="bg-warning"></Badge>
-                        <Badge label="Moves left" value={maxNumberOfMoves-numberOfMoves} bgColor="bg-danger"></Badge>
+                        <Badge label="Moves left" value={maxNumberOfMoves - numberOfMoves} bgColor="bg-danger"></Badge>
+                        <Badge label="Max Number of Moves" value={maxNumberOfMoves} bgColor="bg-danger"></Badge>
                         <Badge label="Lives" value={lives} bgColor="bg-danger"></Badge>
                         <ProgressBar value={duration} max="60"></ProgressBar>
                         <InputText label="Guess"
@@ -90,8 +104,9 @@ export default function Mastermind() {
                     </FormGroup>
                     <p></p>
                     <Table className="table table-responsive table-striped table-hover">
-                        <TableHeader headerNames="Move No,Guess,Message,Perfect Match,Partial Match" />
-                        <TableBody values={moves} attributes="guess,message,perfectMatch,partialMatch" keyAttribute="guess"></TableBody>
+                        <TableHeader headerNames="Move No,Guess,Message,Perfect Match,Partial Match"/>
+                        <TableBody values={moves} attributes="guess,message,perfectMatch,partialMatch"
+                                   keyAttribute="guess"></TableBody>
                     </Table>
                 </CardBody>
             </Card>
