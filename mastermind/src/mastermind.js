@@ -10,6 +10,7 @@ import Button from "./components/button";
 import Table from "./components/table";
 import TableHeader from "./components/table-header";
 import TableBody from "./components/table-body";
+import Badge from "./components/badge";
 
 const initialSecret = createSecret(3);
 
@@ -49,10 +50,9 @@ export default function Mastermind() {
                 <CardHeader title="Game Console"></CardHeader>
                 <CardBody>
                     <FormGroup>
-                        <div><span>Level: {level}</span></div>
-                        <div><span>Number of moves: {numberOfMoves}</span></div>
-                        <div><span>Lives: {lives}</span></div>
-
+                        <Badge label="Level" value={level} bgColor="bg-success"></Badge>
+                        <Badge label="Number of moves" value={numberOfMoves} bgColor="bg-warning"></Badge>
+                        <Badge label="Lives" value={lives} bgColor="bg-danger"></Badge>
                         <InputText label="Guess"
                                    value={guess}
                                    htmlFor="guess"
