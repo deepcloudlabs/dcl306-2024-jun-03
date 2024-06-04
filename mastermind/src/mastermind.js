@@ -42,7 +42,7 @@ export default function Mastermind() {
         localStorage.setItem("mastermind", JSON.stringify({level,setLives, moves,numberOfMoves,maxNumberOfMoves,secret,guess,duration}));
     }
 
-    const play = (event) => {
+    const play = () => {
         if (guess === secret) {
             if (level === 10) {
                 navigate("/wins");
