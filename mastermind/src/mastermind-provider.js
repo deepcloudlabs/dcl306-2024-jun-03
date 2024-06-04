@@ -19,8 +19,7 @@ export const gameInitialState = {
 export const GameContext = createContext(gameInitialState);
 
 export default function MastermindProvider() {
-    const [game, dispatchGame] = useReducer(GameReducer, gameInitialState, () => {
-    });
+    const [game, dispatchGame] = useReducer(GameReducer, gameInitialState);
     return (
         <GameContext.Provider value={{game, dispatchGame}}>
             <MastermindStateless></MastermindStateless>
