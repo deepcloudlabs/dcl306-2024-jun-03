@@ -3,7 +3,7 @@ import CardHeader from "./components/card-header";
 import Card from "./components/card";
 import CardBody from "./components/card-body";
 import {useEffect, useState} from "react";
-import {createSecret, evaluateMove} from "./utility";
+import {createSecret, evaluateMove, Move} from "./utility";
 import FormGroup from "./components/form-group";
 import InputText from "./components/input-text";
 import Button from "./components/button";
@@ -28,25 +28,39 @@ export default function Mastermind() {
     const handleChange = (event) => {
         setGuess(Number(event.target.value));
     };
+    const initializeGame = (message) => {
+        setMaxNumberOfMoves(10 + 2 * level - 3);
+        setDuration(60 + 10 * (level - 3));
+        setNumberOfMoves(0);
+        setMoves([new Move(secret,0,0,message)]);
+        setSecret(createSecret(level));
+    }
+
     const play = (event) => {
         if (guess === secret) {
             setLevel(level + 1);
-            setMoves([]);
-            setGuess(createSecret(level));
-            setSecret(createSecret(level));
-            setNumberOfMoves(0);
+            setLives(lives+1);
+            setDuration(60)
+            initializeGame("You win this level.");
             return;
         }
         setNumberOfMoves(numberOfMoves+1);
         if (numberOfMoves > maxNumberOfMoves){
-            // loses
+            setLives(lives-1);
+            initializeGame("You lose this level.");
         } else {
             setMoves([...moves, evaluateMove(secret,guess)]);
         }
     };
     useEffect(() => {
         let timer = setInterval(() =>{
-            setDuration(duration - 1)
+            if (duration <= 0){
+                setLives(lives-1);
+                initializeGame("You lose this level.");
+                return;
+            }
+            setDuration(duration - 1);
+
         }, 1_000);
         return () => {
             clearInterval(timer);
