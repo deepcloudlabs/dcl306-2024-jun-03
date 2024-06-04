@@ -1,22 +1,26 @@
 function createDigit(min, max) {
-    return Math.floor(Math.random()*(max-min+1))+min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-export function createSecret(level=3){
-    let digits = [createDigit(1,9)];
-    while (digits.length < level){
-           let digit = createDigit(0,9);
-           if (digits.includes(digit)) continue;
-           digits.push(digit);
+export function createSecret(level = 3) {
+    let digits = [createDigit(1, 9)];
+    while (digits.length < level) {
+        let digit = createDigit(0, 9);
+        if (digits.includes(digit)) continue;
+        digits.push(digit);
     }
-    return digits.reduce((number,digit) => 10 * number + digit, 0);
+    return digits.reduce((number, digit) => 10 * number + digit, 0);
 }
 
 export class Move {
-    constructor(guess,perfectMatch,partialMatch) {
+    constructor(guess, perfectMatch, partialMatch, message) {
         this.guess = guess;
         this.perfectMatch = perfectMatch;
         this.partialMatch = partialMatch;
+        if (message) {
+            this.message = message;
+            return;
+        }
         this.message = "";
         if (perfectMatch > 0)
             this.message = `+${perfectMatch}`;
@@ -27,22 +31,22 @@ export class Move {
     }
 }
 
-export function evaluateMove(secret,guess){
+export function evaluateMove(secret, guess) {
     let perfectMatch = 0;
     let partialMatch = 0;
     let secretAsString = secret.toString();
     let guessAsString = guess.toString();
-    for (let i=0; i<secretAsString.length; i++){
+    for (let i = 0; i < secretAsString.length; i++) {
         let s = secretAsString.charAt(i);
-        for (let j=0; j<guessAsString.length; j++){
+        for (let j = 0; j < guessAsString.length; j++) {
             let g = guessAsString.charAt(j);
-            if (s === g){
-                if (i===j)
+            if (s === g) {
+                if (i === j)
                     perfectMatch++;
                 else
                     partialMatch++;
             }
         }
     }
-    return new Move(guess,perfectMatch,partialMatch);
+    return new Move(guess, perfectMatch, partialMatch);
 }
