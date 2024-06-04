@@ -7,7 +7,7 @@ export default  function TableHeader(props) {
         <tr>
             {
                 props.headerNames.split(",").map( headerName => (
-                    <th>{headerName}</th>
+                    <th key={headerName}>{headerName}</th>
                 ))
             }
         </tr>

@@ -3,14 +3,14 @@
 // 2. stateful  -> js class
 // 3. stateful  -> React Hooks -> js function
 
-import Lottery from "./components/lottery";
 import Container from "./components/container";
+import LotteryHooks from "./LotteryHooks";
 
 function App() { // stateless, top-level component
                  // View -> i. Component-Based ii. Virtual DOM iii. Declarative/Functional Programming
   return (
       <Container>
-          <Lottery />
+          <LotteryHooks />
       </Container>
   );
 }
