@@ -19,10 +19,10 @@ export default function Mastermind() {
     let [numberOfMoves, setNumberOfMoves] = useState(0);
 
     const handleChange = (event) => {
-
+        setGuess(event.target.value);
     };
     const play = (event) => {
-
+        
     };
 
     return(
