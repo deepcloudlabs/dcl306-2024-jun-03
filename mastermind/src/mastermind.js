@@ -12,10 +12,12 @@ import TableHeader from "./components/table-header";
 import TableBody from "./components/table-body";
 import Badge from "./components/badge";
 import ProgressBar from "./components/progress-bar";
+import {useNavigate} from "react-router";
 
 const initialSecret = createSecret(3);
 
 export default function Mastermind() {
+    //region state
     let [level, setLevel] = useState(3);
     let [lives, setLives] = useState(3);
     let [moves, setMoves] = useState([]);
@@ -24,55 +26,62 @@ export default function Mastermind() {
     let [numberOfMoves, setNumberOfMoves] = useState(0);
     let [maxNumberOfMoves, setMaxNumberOfMoves] = useState(10 + 2 * level - 3);
     let [duration, setDuration] = useState(60);
+    let navigate = useNavigate();
+    //endregion
 
     const handleChange = (event) => {
         setGuess(Number(event.target.value));
     };
-    const initializeGame = (message) => {
+    const initializeGame = (message,level) => {
         setMaxNumberOfMoves(10 + 2 * level - 3);
         setDuration(60 + 10 * (level - 3));
         setNumberOfMoves(0);
         setMoves([new Move(secret, 0, 0, message)]);
+        setLevel(level);
         setSecret(createSecret(level));
+        localStorage.setItem("mastermind", JSON.stringify({level,setLives, moves,numberOfMoves,maxNumberOfMoves,secret,guess,duration}));
     }
 
     const play = (event) => {
         if (guess === secret) {
             if (level === 10) {
-                // end of game, player wins the game!
+                navigate("/wins");
                 return;
             }
             setLevel(level + 1);
             setLives(lives + 1);
-            setDuration(60)
-            initializeGame("You win this level.");
+            setDuration(60);
+            initializeGame("You win this level.",level+1);
             return;
         }
         let newNumberOfMoves = numberOfMoves + 1;
         setNumberOfMoves(newNumberOfMoves);
         if (newNumberOfMoves >= maxNumberOfMoves) {
             if (lives === 1) {
-                // end of game, player loses the game!
+                navigate("/loses");
                 return;
             }
             setLives(lives - 1);
-            initializeGame("You lose this level.");
+            initializeGame("You lose this level.",level);
         } else {
             setMoves([...moves, evaluateMove(secret, guess)]);
+            localStorage.setItem("mastermind", JSON.stringify({level,setLives, moves,numberOfMoves,maxNumberOfMoves,secret,guess,duration}));
         }
     };
+
     useEffect(() => {
         let timer = setInterval(() => {
             if (duration <= 0) {
                 if (lives === 1) {
-                    // end of game, player loses the game!
+                    navigate("/loses");
                     return;
                 }
                 setLives(lives - 1);
-                initializeGame("You lose this level.");
+                initializeGame("You lose this level.",level);
                 return;
             }
             setDuration(duration - 1);
+            localStorage.setItem("mastermind", JSON.stringify({level,setLives, moves,numberOfMoves,maxNumberOfMoves,secret,guess,duration}));
 
         }, 1_000);
         return () => {
@@ -80,6 +89,25 @@ export default function Mastermind() {
         }
     });
 
+    useEffect(() => {
+        let mastermindState = localStorage.getItem("mastermind");
+        if (mastermindState) {
+            mastermindState = JSON.parse(mastermindState);
+            setLevel(mastermindState.level);
+            setSecret(mastermindState.secret);
+            setDuration(mastermindState.duration);
+            setLives(mastermindState.lives);
+            setGuess(mastermindState.guess);
+            setNumberOfMoves(mastermindState.numberOfMoves);
+            setMaxNumberOfMoves(mastermindState.maxNumberOfMoves);
+            setMoves(mastermindState.moves);
+        } else {
+            localStorage.setItem("mastermind", JSON.stringify({level,setLives, moves,numberOfMoves,maxNumberOfMoves,secret,guess,duration}));
+        }
+        return () => {
+            localStorage.setItem("mastermind", JSON.stringify({level,setLives, moves,numberOfMoves,maxNumberOfMoves,secret,guess,duration}));
+        }
+    }, []);
 
     return (
         <Container>

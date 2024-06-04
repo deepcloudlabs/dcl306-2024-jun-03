@@ -9,7 +9,9 @@ export function createSecret(level = 3) {
         if (digits.includes(digit)) continue;
         digits.push(digit);
     }
-    return digits.reduce((number, digit) => 10 * number + digit, 0);
+    let secret = digits.reduce((number, digit) => 10 * number + digit, 0);
+    console.log(secret);
+    return secret;
 }
 
 export class Move {

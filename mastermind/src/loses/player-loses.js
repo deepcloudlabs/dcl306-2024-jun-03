@@ -2,6 +2,7 @@ import Container from "../components/container";
 import CardHeader from "../components/card-header";
 import CardBody from "../components/card-body";
 import Card from "../components/card";
+import {Link} from "react-router-dom";
 
 export default function PlayerLoses(){
     return(
@@ -10,7 +11,7 @@ export default function PlayerLoses(){
             <Card>
                 <CardHeader title="Player Loses!"></CardHeader>
                 <CardBody>
-                    Would you like to play again?
+                    <Link to={"/"}>Would you like to play again?</Link>
                 </CardBody>
             </Card>
         </Container>
