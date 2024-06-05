@@ -1,6 +1,9 @@
 import React from "react";
 
 export default function TableBody({children,values,attributes,keyAttribute}) {
+    if (!values){
+        return <tbody>{children}</tbody>;
+    }
     return (
         <tbody>
         {

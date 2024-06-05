@@ -1,21 +1,32 @@
 export default function HrReducer(hr, action) {
     const newHr = {...hr};
+    newHr.employee = {...hr.employee}
     switch (action.type) {
         case "INPUT_CHANGED":
             const name = action.event.target.name;
             if (name === "fulltime") {
-                newHr.fulltime = !newHr.fulltime;
+                newHr.employee.fulltime = !newHr.employee.fulltime;
             } else {
-                newHr[name] = action.event.target.value;
+                newHr.employee[name] = action.event.target.value;
             }
             break;
         case "PHOTO_CHANGED":
-            newHr.photo = action.fileData;
+            newHr.employee.photo = action.fileData;
+            break;
+        case "ALL_EMPLOYEES_RECEIVED":
+            newHr.employees = action.employees;
             break;
         case "EMPLOYEE_RECEIVED":
             for (let attr in action.employee) {
-                if (newHr.hasOwnProperty(attr)) {
-                    newHr[attr] = action.employee[attr];
+                if (newHr.employee.hasOwnProperty(attr)) {
+                    newHr.employee[attr] = action.employee[attr];
+                }
+            }
+            break;
+            case "ROW_CLICKED":
+            for (let attr in action.employee) {
+                if (newHr.employee.hasOwnProperty(attr)) {
+                    newHr.employee[attr] = action.employee[attr];
                 }
             }
             break;

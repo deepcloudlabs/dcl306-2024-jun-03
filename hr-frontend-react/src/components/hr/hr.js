@@ -10,11 +10,14 @@ import CheckBox from "../common/check-box";
 import SelectBox from "../common/select-box";
 import Photo from "../common/photo";
 import Button from "../common/button";
+import Table from "../common/table";
+import TableHeader from "../common/table-header";
+import TableBody from "../common/table-body";
 
 export default function Hr() {
     const {hr, dispatchHr} = useContext(HrContext);
     const findByIdentityNo = () => {
-        fetch(`http://localhost:4001/employees/${hr.identityNo}`, {
+        fetch(`http://localhost:4001/employees/${hr.employee.identityNo}`, {
             method: "GET",
             headers: {
                 "Accept": "application/json"
@@ -29,12 +32,12 @@ export default function Hr() {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             },
-            body: JSON.stringify(hr)
+            body: JSON.stringify(hr.employee)
         }).then(res => res.json())
             .then( res => alert("Updated!"))
     }
     const fireEmployee = () => {
-        fetch(`http://localhost:4001/employees/${hr.identityNo}`, {
+        fetch(`http://localhost:4001/employees/${hr.employee.identityNo}`, {
             method: "DELETE",
             headers: {
                 "Accept": "application/json"
@@ -50,9 +53,18 @@ export default function Hr() {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             },
-            body: JSON.stringify(hr)
+            body: JSON.stringify(hr.employee)
         }).then(res => res.json())
             .then( res => alert("Hired!"))
+    }
+    const retrieveAllEmployees = () => {
+        fetch(`http://localhost:4001/employees`, {
+            method: "GET",
+            headers: {
+                "Accept": "application/json"
+            }
+        }).then(res => res.json())
+            .then( employees => dispatchHr({type: "ALL_EMPLOYEES_RECEIVED", employees}))
     }
     return (
         <Container>
@@ -61,7 +73,7 @@ export default function Hr() {
                 <CardHeader title="Hr Console"></CardHeader>
                 <CardBody>
                     <FormGroup>
-                        <InputText value={hr.identityNo}
+                        <InputText value={hr.employee.identityNo}
                                    label={"Identity No"}
                                    htmlFor={"identityNo"}
                                    handleInput={(event) => dispatchHr({"type": "INPUT_CHANGED", event})} />
@@ -70,44 +82,44 @@ export default function Hr() {
                                 onClick={findByIdentityNo} />
                     </FormGroup>
                     <FormGroup>
-                        <InputText value={hr.fullname}
+                        <InputText value={hr.employee.fullname}
                                    label={"Full Name"}
                                    htmlFor={"fullname"}
                                    handleInput={(event) => dispatchHr({"type": "INPUT_CHANGED", event})} />
                     </FormGroup>
                     <FormGroup>
-                        <InputText value={hr.salary}
+                        <InputText value={hr.employee.salary}
                                    label={"Salary"}
                                    htmlFor={"salary"}
                                    handleInput={(event) => dispatchHr({"type": "INPUT_CHANGED", event})} />
                     </FormGroup>
                     <FormGroup>
-                        <InputText value={hr.iban}
+                        <InputText value={hr.employee.iban}
                                    label={"Iban"}
                                    htmlFor={"iban"}
                                    handleInput={(event) => dispatchHr({"type": "INPUT_CHANGED", event})} />
                     </FormGroup>
                     <FormGroup>
-                        <InputText value={hr.birthYear}
+                        <InputText value={hr.employee.birthYear}
                                    label={"Birth Year"}
                                    htmlFor={"birthYear"}
                                    handleInput={(event) => dispatchHr({"type": "INPUT_CHANGED", event})} />
                     </FormGroup>
                     <FormGroup>
-                        <CheckBox value={hr.fulltime}
+                        <CheckBox value={hr.employee.fulltime}
                                    label={"Full Time?"}
                                   id={"fulltime"}
                                    handleChange={(event) => dispatchHr({"type": "INPUT_CHANGED", event})} />
                     </FormGroup>
                     <FormGroup>
-                        <SelectBox value={hr.department}
+                        <SelectBox value={hr.employee.department}
                                   label={"Department"}
                                   id={"department"}
                                    options={["IT", "Sales", "Finance", "HR"]}
                                    handleChange={(event) => dispatchHr({"type": "INPUT_CHANGED", event})} />
                     </FormGroup>
                     <FormGroup>
-                        <Photo value={hr.photo}
+                        <Photo value={hr.employee.photo}
                                label={"Photo"}
                                id={"photo"}
                                handleChange={(fileData) => dispatchHr({"type": "PHOTO_CHANGED", fileData})}></Photo>
@@ -123,6 +135,36 @@ export default function Hr() {
                                 label={"Fire Employee"}
                                 onClick={fireEmployee} />
                     </FormGroup>
+                </CardBody>
+            </Card>
+            <Card>
+                <CardHeader title={"Employees"}>
+                    <Button className={"btn btn-success"}
+                            label={"Retrieve All"}
+                            onClick={retrieveAllEmployees}></Button>
+                </CardHeader>
+                <CardBody>
+                    <Table className={"table table-striped table-hover"}>
+                        <TableHeader headerNames={"No,IdentityNo,Full Name,Iban,Salary,Birth Year, Department, Full Time?,Photo"}></TableHeader>
+                        <TableBody>
+                            {
+                                hr.employees.map( (emp,index) =>
+                                    <tr key={emp.identityNo}
+                                        onClick={event => dispatchHr({type: "ROW_CLICKED", employee: emp})}>
+                                        <td>{index+1}</td>
+                                        <td>{emp.identityNo}</td>
+                                        <td>{emp.fullname}</td>
+                                        <td>{emp.iban}</td>
+                                        <td>{emp.salary}</td>
+                                        <td>{emp.birthYear}</td>
+                                        <td>{emp.department}</td>
+                                        <td>{emp.fulltime ? 'FULL TIME' : 'PART TIME'}</td>
+                                        <td><img alt={""} className={"img-thumbnail"} src={emp.photo}></img></td>
+                                    </tr>
+                                )
+                            }
+                        </TableBody>
+                    </Table>
                 </CardBody>
             </Card>
         </Container>
