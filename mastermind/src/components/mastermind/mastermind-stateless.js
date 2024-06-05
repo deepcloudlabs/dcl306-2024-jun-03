@@ -25,6 +25,14 @@ export default function MastermindStateless(){
         if (game.status === "PLAYER_WINS")
             navigate("/wins");
     });
+    useEffect(() => {
+        let timer = setInterval(() => {
+            dispatchGame({type: "TIMER_TICK"})
+        }, 1_000);
+        return () => {
+            clearInterval(timer);
+        }
+    });
     return( // Model -> View
         <Container>
             <p></p>

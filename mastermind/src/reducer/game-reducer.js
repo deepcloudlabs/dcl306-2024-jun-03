@@ -39,7 +39,19 @@ export default function GameReducer(game, action) {
         case "GUESS_CHANGED":
             newGame.guess = Number(action.event.target.value);
             break;
-        default:
+        case "TIMER_TICK":
+            if (newGame.duration <= 0) {
+                if (newGame.lives === 1) {
+                    newGame.status = "GAME_OVER"
+                    return newGame;
+                }
+                newGame.lives --;
+                initializeGame(newGame);
+                return newGame;
+            }
+            newGame.duration--;
+            break;
+            default:
             throw new Error("Unrecognized action type");
     }
     return newGame;
