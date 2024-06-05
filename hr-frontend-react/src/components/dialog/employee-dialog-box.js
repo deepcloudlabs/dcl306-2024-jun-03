@@ -10,12 +10,10 @@ export default function EmployeeDialogBox() {
     }
     return (
         <Modal show={showDialog}>
-            <Modal.Header closeButton></Modal.Header>
             <Modal.Body>
                 <Hr></Hr>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="danger">Save</Button>
                 <Button variant="primary"
                         onClick={closeDialog}
                 >Close</Button>

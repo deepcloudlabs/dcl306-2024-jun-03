@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a54fd500-c62f-417f-a87b-6625f6a0b2b5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../hr-frontend-react/src/components/common/column.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hr-frontend-react/src/components/common/row.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hr-frontend-react/src/components/hr/hr-employees.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../binance-frontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../binance-frontend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../binance-frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../binance-frontend/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../binance-frontend/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../binance-frontend/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../binance-frontend/src/components/market-app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../binance-frontend/src/components/market-app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hr-backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr-frontend-react/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hr-frontend-react/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr-frontend-react/src/components/common/container.js" beforeDir="false" afterPath="$PROJECT_DIR$/../hr-frontend-react/src/components/common/container.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hr-frontend-react/src/components/dialog/employee-dialog-box.js" beforeDir="false" afterPath="$PROJECT_DIR$/../hr-frontend-react/src/components/dialog/employee-dialog-box.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr-frontend-react/src/components/hr/hr.js" beforeDir="false" afterPath="$PROJECT_DIR$/../hr-frontend-react/src/components/hr/hr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr-frontend-react/src/components/hr/provider/hr-provider.js" beforeDir="false" afterPath="$PROJECT_DIR$/../hr-frontend-react/src/components/hr/provider/hr-provider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr-frontend-react/src/components/hr/reducer/hr-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../hr-frontend-react/src/components/hr/reducer/hr-reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
