@@ -9,10 +9,51 @@ import InputText from "../common/input-text";
 import CheckBox from "../common/check-box";
 import SelectBox from "../common/select-box";
 import Photo from "../common/photo";
+import Button from "../common/button";
 
 export default function Hr() {
     const {hr, dispatchHr} = useContext(HrContext);
+    const findByIdentityNo = () => {
+        fetch(`http://localhost:4001/employees/${hr.identityNo}`, {
+            method: "GET",
+            headers: {
+                "Accept": "application/json"
+            }
+        }).then(res => res.json())
+            .then( employee => dispatchHr({type: "EMPLOYEE_RECEIVED", employee}))
+    }
+    const updateEmployee = () => {
+        fetch(`http://localhost:4001/employees`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(hr)
+        }).then(res => res.json())
+            .then( res => alert("Updated!"))
+    }
+    const fireEmployee = () => {
+        fetch(`http://localhost:4001/employees/${hr.identityNo}`, {
+            method: "DELETE",
+            headers: {
+                "Accept": "application/json"
+            }
+        }).then(res => res.json())
+            .then( employee => dispatchHr({type: "EMPLOYEE_RECEIVED", employee}))
 
+    }
+    const hireEmployee = () => {
+        fetch("http://localhost:4001/employees", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(hr)
+        }).then(res => res.json())
+            .then( res => alert("Hired!"))
+    }
     return (
         <Container>
             <p></p>
@@ -24,6 +65,9 @@ export default function Hr() {
                                    label={"Identity No"}
                                    htmlFor={"identityNo"}
                                    handleInput={(event) => dispatchHr({"type": "INPUT_CHANGED", event})} />
+                        <Button className={"btn-success"}
+                                label={"Find"}
+                                onClick={findByIdentityNo} />
                     </FormGroup>
                     <FormGroup>
                         <InputText value={hr.fullname}
@@ -59,14 +103,25 @@ export default function Hr() {
                         <SelectBox value={hr.department}
                                   label={"Department"}
                                   id={"department"}
-                                   options={["IT", "SALES", "FINANCE", "HR"]}
+                                   options={["IT", "Sales", "Finance", "HR"]}
                                    handleChange={(event) => dispatchHr({"type": "INPUT_CHANGED", event})} />
                     </FormGroup>
                     <FormGroup>
                         <Photo value={hr.photo}
                                label={"Photo"}
                                id={"photo"}
-                                handleChange={(event) => dispatchHr({"type": "INPUT_CHANGED", event})}></Photo>
+                               handleChange={(fileData) => dispatchHr({"type": "PHOTO_CHANGED", fileData})}></Photo>
+                    </FormGroup>
+                    <FormGroup>
+                        <Button className={"btn-primary"}
+                                label={"Hire Employee"}
+                                onClick={hireEmployee} />
+                        <Button className={"btn-info"}
+                                label={"Update Employee"}
+                                onClick={updateEmployee} />
+                        <Button className={"btn-danger"}
+                                label={"Fire Employee"}
+                                onClick={fireEmployee} />
                     </FormGroup>
                 </CardBody>
             </Card>

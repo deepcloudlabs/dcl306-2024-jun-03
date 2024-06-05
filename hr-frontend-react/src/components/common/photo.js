@@ -9,7 +9,7 @@ export default function Photo({label, id, value, handleChange}) {
     }
     return (
         <div className="input-group">
-            <label htmlFor={id}>{label}</label>
+            <label htmlFor={id}>{label}:</label>
             <img className="img-thumbnail"
                  src={value} alt=""></img>
             <label>

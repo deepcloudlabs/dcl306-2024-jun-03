@@ -9,6 +9,16 @@ export default function HrReducer(hr, action) {
                 newHr[name] = action.event.target.value;
             }
             break;
+        case "PHOTO_CHANGED":
+            newHr.photo = action.fileData;
+            break;
+        case "EMPLOYEE_RECEIVED":
+            for (let attr in action.employee) {
+                if (newHr.hasOwnProperty(attr)) {
+                    newHr[attr] = action.employee[attr];
+                }
+            }
+            break;
         default:
             throw new Error("Unrecognized action type");
     }
