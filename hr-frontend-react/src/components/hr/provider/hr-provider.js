@@ -1,4 +1,4 @@
-import {createContext, useReducer} from "react";
+import {createContext, useContext, useReducer} from "react";
 import HrReducer from "../reducer/hr-reducer";
 import Hr from "../hr";
 const hrInitialState = {
@@ -16,6 +16,26 @@ const hrInitialState = {
 };
 
 export const HrContext = createContext(hrInitialState);
+
+export function useHr(){
+    const {hr, dispatchHr} = useContext(HrContext);
+    return {hr, dispatchHr};
+}
+
+export function useEmployee(){
+    const {hr} = useContext(HrContext);
+    return hr.employee;
+}
+
+export function useEmployees(){
+    const {hr} = useContext(HrContext);
+    return hr.employees;
+}
+
+export function useHrDispatch(){
+    const {dispatchHr} = useContext(HrContext);
+    return dispatchHr;
+}
 
 export default function HrProvider() {
     const [hr, dispatchHr] = useReducer(HrReducer, hrInitialState);

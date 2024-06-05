@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8471717-debc-409b-ac05-5b3176e829cd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/dialog/employee-dialog-box.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hr-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hr-backend/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/card-header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/card-header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/table-body.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/table-body.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/badge.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/badge.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/hr/hr.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/hr/hr.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/hr/provider/hr-provider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/hr/provider/hr-provider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/hr/reducer/hr-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/hr/reducer/hr-reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +93,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1717576708610</updated>
-      <workItem from="1717576709725" duration="7255000" />
+      <workItem from="1717576709725" duration="7894000" />
     </task>
     <servers />
   </component>
