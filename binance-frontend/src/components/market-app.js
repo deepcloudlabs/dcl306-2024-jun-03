@@ -85,8 +85,8 @@ export default function MarketApp(){
                 <CardHeader title="Market"></CardHeader>
                 <CardBody>
                     <Line data={chartData}
-                          width={640}
-                          height={480}
+                          width={1080}
+                          height={640}
                           options={options}></Line>
                 </CardBody>
             </Card>
