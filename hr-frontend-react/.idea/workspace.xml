@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8471717-debc-409b-ac05-5b3176e829cd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/dialog/employee-dialog-box.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialog/employee-dialog-box.js" afterDir="false" />
-    </list>
+    <list default="true" id="d8471717-debc-409b-ac05-5b3176e829cd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1717576708610</updated>
-      <workItem from="1717576709725" duration="13284000" />
+      <workItem from="1717576709725" duration="14464000" />
     </task>
     <servers />
   </component>

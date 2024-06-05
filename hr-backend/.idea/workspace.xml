@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02a45277-4ef5-41ed-893e-58ffd674b3b8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../hr-frontend-react/src/components/dialog/employee-dialog-box.js" beforeDir="false" afterPath="$PROJECT_DIR$/../hr-frontend-react/src/components/dialog/employee-dialog-box.js" afterDir="false" />
-    </list>
+    <list default="true" id="02a45277-4ef5-41ed-893e-58ffd674b3b8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
