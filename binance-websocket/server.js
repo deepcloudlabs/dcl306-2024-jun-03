@@ -42,13 +42,18 @@ io.on('connection', (socket)=> {
         sockets.splice(index,1);
     } );
 });
+let totalVolume = 0;
 
 ws.on("message", data => {
     let frame= JSON.parse(data);
+    let volume = Number(frame.q) * Number(frame.p);
+    totalVolume += volume;
     let model = {
         "symbol": frame.s,
         "price": frame.p,
         "quantity": frame.q,
+        volume,
+        totalVolume,
         "timestamp": frame.E
     } ;
 	// console.log(model);

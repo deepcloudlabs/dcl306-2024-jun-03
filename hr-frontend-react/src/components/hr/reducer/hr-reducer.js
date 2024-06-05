@@ -23,7 +23,14 @@ export default function HrReducer(hr, action) {
                 }
             }
             break;
-            case "ROW_CLICKED":
+        case "CLOSE_DIALOG":
+            newHr.showDialog = false;
+            break;
+        case "OPEN_DIALOG":
+            newHr.showDialog = true;
+            newHr.employee = {...action.employee};
+            break;
+        case "ROW_CLICKED":
             for (let attr in action.employee) {
                 if (newHr.employee.hasOwnProperty(attr)) {
                     newHr.employee[attr] = action.employee[attr];

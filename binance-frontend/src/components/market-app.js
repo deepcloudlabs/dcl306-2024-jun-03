@@ -6,6 +6,8 @@ import {useEffect, useState} from "react";
 import io from "socket.io-client";
 import {Line} from "react-chartjs-2";
 import {CategoryScale, Chart as ChartJS, Tooltip, Legend, LinearScale, LineElement, PointElement, Title} from "chart.js";
+import SelectBox from "./common/select-box";
+import FormGroup from "./common/form-group";
 
 const socket = io("ws://localhost:5555");
 const options = {
@@ -34,9 +36,10 @@ ChartJS.register(
 );
 export default function MarketApp(){
     const [trades, setTrades] = useState([]);
+    const [indicator, setIndicator] = useState("price");
     const [symbol, setSymbol] = useState("BTCUSDT");
     const [symbols, setSymbols] = useState(["BTCUSDT", "ETHBTC"]);
-    const [windowSize, setWindowSize] = useState(250);
+    const [windowSize, setWindowSize] = useState(50);
     const [connected, setConnected] = useState(false);
     const [chartData, setChartData] = useState({
         labels: [],
@@ -67,7 +70,7 @@ export default function MarketApp(){
             setTrades(newTrades);
             const newChartData = {...chartData};
             newChartData.datasets = [...chartData.datasets];
-            newChartData.datasets[0].data = [...chartData.datasets[0].data, Number(trade.price)]
+            newChartData.datasets[0].data = [...chartData.datasets[0].data, Number(trade[indicator])]
             if (newChartData.datasets[0].data.length > windowSize){
                 newChartData.datasets[0].data.splice(0,newChartData.datasets[0].data.length - windowSize);
             }
@@ -82,7 +85,22 @@ export default function MarketApp(){
         <Container>
             <p></p>
             <Card>
-                <CardHeader title="Market"></CardHeader>
+                <CardHeader title="Market">
+                    <FormGroup>
+                    <SelectBox value={windowSize}
+                               label={"Window Size"}
+                               options={[25,50,100,250]}
+                               id={"windowSize"}
+                               handleChange={event => setWindowSize(Number(event.target.value))}></SelectBox>
+                    </FormGroup>
+                    <FormGroup>
+                    <SelectBox value={indicator}
+                               label={"Indicator"}
+                               options={["price","quantity","volume","totalVolume"]}
+                               id={"indicator"}
+                               handleChange={event => setIndicator(event.target.value)}></SelectBox>
+                    </FormGroup>
+                </CardHeader>
                 <CardBody>
                     <Line data={chartData}
                           width={1080}

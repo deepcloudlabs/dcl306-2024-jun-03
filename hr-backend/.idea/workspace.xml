@@ -5,35 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a45277-4ef5-41ed-893e-58ffd674b3b8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../binance-frontend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-frontend/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-frontend/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-frontend/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-frontend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-frontend/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-frontend/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-frontend/public/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-frontend/public/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-frontend/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-frontend/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-frontend/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-frontend/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-frontend/src/App.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-frontend/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-frontend/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-frontend/src/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-frontend/src/reportWebVitals.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-frontend/src/setupTests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-websocket/.idea/binance-websocket.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-websocket/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-websocket/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-websocket/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-websocket/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-websocket/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-websocket/server-emulation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-websocket/server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr-frontend-react/src/components/common/column.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr-frontend-react/src/components/common/row.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr-frontend-react/src/components/hr/hr-employees.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../binance-frontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../binance-frontend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../binance-frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../binance-frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../binance-frontend/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../binance-frontend/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../binance-frontend/src/components/market-app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../binance-frontend/src/components/market-app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../binance-websocket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../binance-websocket/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../binance-websocket/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/../binance-websocket/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hr-frontend-react/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hr-frontend-react/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr-frontend-react/src/components/common/container.js" beforeDir="false" afterPath="$PROJECT_DIR$/../hr-frontend-react/src/components/common/container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr-frontend-react/src/components/dialog/employee-dialog-box.js" beforeDir="false" afterPath="$PROJECT_DIR$/../hr-frontend-react/src/components/dialog/employee-dialog-box.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr-frontend-react/src/components/hr/hr.js" beforeDir="false" afterPath="$PROJECT_DIR$/../hr-frontend-react/src/components/hr/hr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr-frontend-react/src/components/hr/provider/hr-provider.js" beforeDir="false" afterPath="$PROJECT_DIR$/../hr-frontend-react/src/components/hr/provider/hr-provider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr-frontend-react/src/components/hr/reducer/hr-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../hr-frontend-react/src/components/hr/reducer/hr-reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +88,7 @@
       <updated>1717575561433</updated>
       <workItem from="1717575562503" duration="4437000" />
       <workItem from="1717589537938" duration="356000" />
+      <workItem from="1717599513382" duration="647000" />
     </task>
     <servers />
   </component>
