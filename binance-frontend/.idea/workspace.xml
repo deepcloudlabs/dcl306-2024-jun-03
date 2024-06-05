@@ -5,48 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc2ecfb2-beca-4556-ae4a-ca71572ec716" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/binance-frontend.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/badge.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/button.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/card-body.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/card-header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/card.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/check-box.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/container.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/form-group.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/input-text.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/photo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/progress-bar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/select-box.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/table-body.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/table-header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/table.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/market-app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-websocket/.idea/binance-websocket.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-websocket/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-websocket/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-websocket/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-websocket/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-websocket/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-websocket/server-emulation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../binance-websocket/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hr-backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr-frontend-react/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hr-frontend-react/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/market-app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/market-app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +86,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1717589707063</updated>
-      <workItem from="1717589708399" duration="1615000" />
+      <workItem from="1717589708399" duration="1821000" />
     </task>
     <servers />
   </component>
