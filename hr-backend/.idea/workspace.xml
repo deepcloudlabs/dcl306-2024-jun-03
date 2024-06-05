@@ -5,8 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a45277-4ef5-41ed-893e-58ffd674b3b8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../hr-frontend-react/src/components/hr/hr.js" beforeDir="false" afterPath="$PROJECT_DIR$/../hr-frontend-react/src/components/hr/hr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr-frontend-react/src/components/hr/provider/hr-provider.js" beforeDir="false" afterPath="$PROJECT_DIR$/../hr-frontend-react/src/components/hr/provider/hr-provider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-frontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-frontend/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-frontend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-frontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-frontend/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-frontend/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-frontend/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-frontend/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-frontend/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-frontend/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-frontend/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-frontend/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-frontend/src/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-frontend/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-frontend/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-frontend/src/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-frontend/src/reportWebVitals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-frontend/src/setupTests.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-websocket/.idea/binance-websocket.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-websocket/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-websocket/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-websocket/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-websocket/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-websocket/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-websocket/server-emulation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../binance-websocket/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr-frontend-react/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hr-frontend-react/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,30 +43,30 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2hS7KeqlUjUQCugG1r4pJsJXm6G" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/var/workspace/github/dcl306-2024-jun-03/hr-backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.middleware.executor": "Run",
-    "ts.external.directory.path": "C:\\Users\\binku\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/var/workspace/github/dcl306-2024-jun-03/hr-backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.middleware.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\binku\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="middleware" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -72,7 +99,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1717575561433</updated>
-      <workItem from="1717575562503" duration="4426000" />
+      <workItem from="1717575562503" duration="4437000" />
+      <workItem from="1717589537938" duration="356000" />
     </task>
     <servers />
   </component>
