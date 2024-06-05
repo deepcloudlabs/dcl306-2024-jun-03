@@ -1,7 +1,7 @@
-import Container from "../components/container";
-import CardHeader from "../components/card-header";
-import CardBody from "../components/card-body";
-import Card from "../components/card";
+import Container from "../components/common/container";
+import CardHeader from "../components/common/card-header";
+import CardBody from "../components/common/card-body";
+import Card from "../components/common/card";
 import {Link} from "react-router-dom";
 
 export default function PlayerWins(){
